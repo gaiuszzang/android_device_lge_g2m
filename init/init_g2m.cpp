@@ -93,5 +93,5 @@ void vendor_load_properties() {
 
     std::string device = GetProperty("ro.product.device", "");
 
-    ERROR("Found hardware id: %s setting build properties for %s device\n", serial.c_str(), device.c_str());
+    LOG(ERROR) << "Found hardware id: '" << serial.c_str() << "' setting build properties for '" << device.c_str() << "' device\n";
 }
