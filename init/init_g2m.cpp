@@ -1,5 +1,6 @@
 /*
-   Copyright (c) 2014, The Linux Foundation. All rights reserved.
+   Copyright (c) 2016, The CyanogenMod Project
+   Copyright (C) 2017, The LineageOS Project
 
    Redistribution and use in source and binary forms, with or without
    modification, are permitted provided that the following conditions are
@@ -33,10 +34,12 @@
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
 
-#include "vendor_init.h"
+#include <android-base/properties.h>
+
 #include "property_service.h"
-#include "log.h"
-#include "util.h"
+#include "vendor_init.h"
+
+using android::base::GetProperty;
 
 void property_override(char const prop[], char const value[])
 {
@@ -49,11 +52,8 @@ void property_override(char const prop[], char const value[])
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
-void vendor_load_properties()
-{
-    char devicename[PROP_VALUE_MAX];
-
-    std::string serial = property_get("ro.boot.serialno");
+void vendor_load_properties() {
+    std::string serial = GetProperty("ro.boot.serialno", "");
 
     if (serial.substr(0,6) == "LGD618") {
         /* D618 */
@@ -91,7 +91,7 @@ void vendor_load_properties()
         property_set("persist.multisim.config", "");
     }
 
-    std::string device = property_get("ro.product.device");
-    strlcpy(devicename, device.c_str(), sizeof(devicename));
-    ERROR("Found hardware id: %s setting build properties for %s device\n", serial.c_str(), devicename);
+    std::string device = GetProperty("ro.product.device", "");
+
+    ERROR("Found hardware id: %s setting build properties for %s device\n", serial.c_str(), device.c_str());
 }
