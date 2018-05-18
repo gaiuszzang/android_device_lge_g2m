@@ -25,7 +25,7 @@ DEVICE_PACKAGE_OVERLAYS += device/lge/g2m/overlay
 # Configs
 PRODUCT_COPY_FILES += \
     device/lge/g2m/prebuilt/etc/media_profiles.xml:system/etc/media_profiles.xml \
-    device/lge/g2m/prebuilt/etc/mixer_paths.xml:system/etc/mixer_paths.xml \
+    device/lge/g2m/prebuilt/etc/mixer_paths.xml:system/vendor/etc/mixer_paths.xml \
     device/lge/g2m/prebuilt/usr/idc/touch_dev.idc:system/usr/idc/touch_dev.idc \
     device/lge/g2m/prebuilt/usr/keylayout/Generic.kl:system/usr/keylayout/Generic.kl
 
