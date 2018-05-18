@@ -41,6 +41,7 @@
 #include "log.h"
 
 using android::base::GetProperty;
+using namespace android::init;
 
 void property_override(char const prop[], char const value[])
 {
@@ -94,5 +95,5 @@ void vendor_load_properties() {
 
     std::string device = GetProperty("ro.product.device", "");
 
-    LOG(ERROR) << "Found hardware id: '" << serial.c_str() << "' setting build properties for '" << device.c_str() << "' device\n";
+    //LOG(ERROR) << "Found hardware id: '" << serial.c_str() << "' setting build properties for '" << device.c_str() << "' device\n";
 }
