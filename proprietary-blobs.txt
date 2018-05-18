@@ -61,7 +61,6 @@ lib/liblgftmitem.so
 
 # Camera
 bin/mm-qcamera-daemon
-lib/hw/camera.vendor.msm8226.so
 lib/libmmcamera_imx179.so
 lib/libchromatix_imx179_common.so
 lib/libchromatix_imx179_default_video.so
@@ -75,6 +74,7 @@ lib/libmorpho_panorama_gp.so
 lib/libmorpho_noise_reduction.so
 lib/libmmjpeg_interface.so
 lib/libmm-qcamera.so
+vendor/lib/hw/camera.vendor.msm8226.so
 vendor/lib/liboemcamera.so
 vendor/lib/libmmjpeg.so
 vendor/lib/libjpegdhw.so
