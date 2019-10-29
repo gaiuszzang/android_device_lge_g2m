@@ -34,6 +34,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/lge/g2m/releasetools
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := g2m
+BOARD_KERNEL_IMAGE_NAME := zImage
 
 # Kernel
 TARGET_KERNEL_CONFIG := g2m_lineage_defconfig
